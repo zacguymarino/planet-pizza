@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Planet Pizza
+        </title>
+        <meta name="description" content="Planet Pizza is home of the first recipe designed for aliens (extraterrestrials) and also hosts the election for World Ambassador.">
+
+        <!-- Responsive Design -->
+        <meta name="viewport" content="width=device-width, initial-scale=0.67">
+
+        <!-- Pure CSS CDN -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css"
+        integrity="sha384-X38yfunGUhNzHpBaEBsWLO+A0HDYOQi8ufWDkZ0k9e0eXz/tH3II7uKZ9msv++Ls" crossorigin="anonymous">
+
+        <!-- Custom CSS -->
+        <link rel="stylesheet" type="text/css" href="pp_main.css">
+
+        <!-- Favicon -->
+        <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+
+        <!-- PDF download CDNs -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
+
+        <!-- Custom js -->
+        <script src="pp_main.js"></script>
+    </head>
+    <body>
+        <div class="nav">
+            <input type="checkbox" id="nav-check">
+            <div class="nav-header">
+                <div class="nav-title">
+                    <button onclick="generatePDF()">download</button>
+                </div>
+            </div>
+            <div class="nav-btn">
+                <label for="nav-check">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </label>
+            </div>
+            <div class="nav-links">
+                <button onclick="generateAlert()" class="transparent"><span class="inCircle">&#x3f;</span></button>
+                <a href="https://www.planet.pizza/human">I'm human</a>
+            </div>
+        </div>
+        <div id="forDownload">
+        <table border="1" cellspacing="1" cellpadding="1" align="center">
+            <tbody>
+                <tr>
+                    <td style="text-align:center">
+                        <img src="images/humans_pioneerPlaque.png">
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table border="1" cellspacing="1" cellpadding="1" align="center">
+            <tbody>
+                <tr>
+                    <td style="text-align:center">
+                        <p><u><b>0, 1, =, ...</b></u></p>
+                        <p>0000 = ()</p>
+                        <p>0001 = (★)</p>
+                        <p>0010 =&nbsp;(★★)</p>
+                        <p>0011 =&nbsp;(★★★)</p>
+                        <p>0100 =&nbsp;(★★★★)</p>
+                        <p>0101 =&nbsp;(★★★★★)</p>
+                        <p>⋮</p>
+                        <p>01010 =&nbsp;(★★★★★★★★★★)</p>
+                        <p>⋮</p>
+                        <p>&infin;</p>
+                    </td>
+                    <td style="text-align:center">
+                        <p><u><b>&infin;</b></u></p>
+                        <img src="images/infinityShapes.png" style="width:150px;">
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table border="1" cellspacing="1" cellpadding="1" align="center">
+            <tbody>
+                <tr>
+                    <td style="text-align:center">
+                        <p><u><b>0, 1, 2, 3, 4, 5, 6, 7, 8, 9</b></u></p>
+                        <p>0000 = 0</p>
+                        <p>0001 = 1</p>
+                        <p>0010 = 2</p>
+                        <p>0011 = 3</p>
+                        <p>0100 = 4</p>
+                        <p>0101 = 5</p>
+                        <p>0110 = 6</p>
+                        <p>0111 = 7</p>
+                        <p>01000 = 8</p>
+                        <p>01001 = 9</p>
+                        <p>01010 = 10</p>
+                        <p>01011 = 11</p>
+                        <p>01100 = 12</p>
+                        <p>01101 = 13</p>
+                        <p>01110 = 14</p>
+                        <p>01111 = 15</p>
+                        <p>010000 = 16</p>
+                        <p>010001 = 17</p>
+                        <p>010010 = 18</p>
+                        <p>010011 = 19</p>
+                        <p>010100 = 20</p>
+                        <p>010101 = 21</p>
+                        <p>⋮</p>
+                        <p>01100011 = 99</p>
+                        <p>01100100 = 100</p>
+                        <p>⋮</p>
+                        <p>01111101000 = 1000</p>
+                        <p>⋮</p>
+                        <p>011110100001001000000 = 1000000</p>
+                        <p>011110100001001000001 =&nbsp;1000001</p>
+                        <p>⋮</p>
+                        <p>&infin;</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table border="1" cellspacing="1" cellpadding="1" align="center">
+            <tbody>
+                <tr>
+                    <td style="text-align:center;">
+                        <p><u><b>.</b></u></p>
+                        <img src="images/decimal.png">
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table border="1" cellspacing="1" cellpadding="1" align="center">
+            <tbody>
+                <tr>
+                    <td style="text-align:center;">
+                        <p><u><b>-x</b></u></p>
+                        <img src="images/numberLine.png">
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table border="1" cellspacing="1" cellpadding="1" align="center">
+            <tbody>
+                <tr>
+                    <td style="text-align:center">
+                        <p><u><b>+</b></u></p>
+                        <p>4 + 4 = 8</p>
+                        <p>50 + 25 = 75</p>
+                        <p>2 + 1 = 3</p>
+                        <p>5 + 10 = 15</p>
+                    </td>
+                    <td style="text-align:center">
+                        <p><u><b>-</b></u></p>
+                        <p>4 - 4 = 0</p>
+                        <p>50 - 25 = 25</p>
+                        <p>2 - 1 = 1</p>
+                        <p>5 - 10 = -5</p>
+                    </td>
+                    <td style="text-align:center">
+                        <p><u><b>*</b></u></p>
+                        <p>4 * 4 = 16</p>
+                        <p>50 * 25 = 1250</p>
+                        <p>2 * 1 = 2</p>
+                        <p>5 * 10 = 50</p>
+                    </td>
+                    <td style="text-align:center">
+                        <p><u><b>/</b></u></p>
+                        <p>4 / 4 = 1</p>
+                        <p>50 / 25 = 2</p>
+                        <p>2 / 1 = 2</p>
+                        <p>5 / 10 = 0.5</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table border="1" align="center" cellspacing="1" cellpadding="1">
+            <tbody>
+                <tr>
+                    <td style="text-align:center">
+                        <p><u><b>x^(y)</b></u></p>
+                        <p>5^(1) = 5</p>
+                        <p>9^(1) = 9</p>
+                        <p>1^(2) = 1 * 1 = 1</p>
+                        <p>2^(2) = 2 * 2 = 4</p>
+                        <p>5^(2) = 25</p>
+                        <p>2^(3) = 2 * 2 * 2 = 8</p>
+                        <p>4^(3) = 4 * 4 * 4 = 64</p>
+                        <p>5^(3) = 125</p>
+                    </td>
+                    <td style="text-align:center">
+                        <p><u><b>&radic;(x), ∛(x)</b></u></p>
+                        <p>&radic;(9) = 9^(0.5) = 3</p>
+                        <p>&radic;(4) = 4^(0.5) = 2</p>
+                        <p>&radic;(144) = 12</p>
+                        <p>&radic;(2) = 1.41421...</p>
+                        <p>∛(8) = 8^(1/3) = 2</p>
+                        <p>∛(1000) = 1000^(1/3) = 10</p>
+                        <p>∛(64) = 4</p>
+                        <p>∛(125) = 5</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table border="1" cellspacing="1" cellpadding="1" align="center">
+            <tbody>
+                <tr>
+                    <td style="text-align:center;">
+                        <p><u><b>Aa, Bb, Cc, Dd, Ee, Ff, Gg, Hh, Ii, Jj, Kk, Ll, Mm, Nn, Oo, Pp, Qq, Rr, Ss, Tt, Uu, Vv, Ww, Xx, Yy, Zz</b></u></p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table border="1" cellspacing="1" cellpadding="1" align="center">
+            <tbody>
+                <tr>
+                    <td style="text-align:center;">
+                        <img src="images/hydrogen.png">
+                        <p>1</p>
+                        <p>H</p>
+                    </td>
+                    <td style="text-align:center;">
+                        <img src="images/helium.png">
+                        <p>2</p>
+                        <p>He</p>
+                    </td>
+                    <td style="text-align:center;">
+                        <img src="images/lithium.png">
+                        <p>3</p>
+                        <p>Li</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table border="1" cellspacing="1" cellpadding="1" align="center">
+            <tbody>
+                <tr>
+                    <td style="text-align:center;">
+                        <img src="images/periodicTable.png">
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table border="1" cellspacing="1" cellpadding="1" align="center">
+            <tbody>
+                <tr>
+                    <td style="text-align:center;">
+                        <p>H + H = 2*H = 2H &#8594; H<sub>2</sub></p>
+                        <p>2H &#8594; H<sub>2</sub></p>
+                    </td>
+                    <td style="text-align:center;">
+                        <p>O + O = 2*O = 2O &#8594; O<sub>2</sub></p>
+                        <p>2O &#8594; O<sub>2</sub></p>
+                    </td>
+                    <td style="text-align:center;">
+                        <p>(2*H<sub>2</sub>) + O<sub>2</sub> &#8594; 2*H<sub>2</sub>O</p>
+                        <p>2H<sub>2</sub> + O<sub>2</sub> &#8594; 2H<sub>2</sub>O</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table border="1" cellspacing="1" cellpadding="1" align="center">
+            <tbody>
+                <tr>
+                    <td style="text-align:center;">
+                        <p>2H<sub>2</sub> + O<sub>2</sub> &#8594; 2H<sub>2</sub>O</p>
+                        <p><img src="images/h2_stick.png">&nbsp;<img src="images/h2_stick.png"> <strong>&#65291;</strong> <img src="images/o2_stick.png"> <strong>&#8594;</strong> <img src="images/h2o_stick.png">&nbsp;<img src="images/h2o_stick.png"></p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table border="1" cellspacing="1" cellpadding="1" align="center">
+            <tbody>
+                <tr>
+                    <td style="text-align:center;">
+                        <p>H<sub>2</sub>O</p>
+                        <img src="images/h2o_stick.png">
+                    </td>
+                    <td style="text-align:center;">
+                        <p>CO<sub>2</sub></p>
+                        <img src="images/co2_stick.png">
+                    </td>
+                    <td style="text-align:center;">
+                        <p>NaCl</p>
+                        <img src="images/nacl_stick.png">
+                    </td>
+                    <td style="text-align:center;">
+                        <p>C<sub>3</sub>H<sub>8</sub></p>
+                        <img src="images/propane_stick.png">
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table border="1" cellspacing="1" cellpadding="1" align="center">
+            <tbody>
+                <tr>
+                    <td style="text-align:center;">
+                        <p>C<sub>3</sub>H<sub>8</sub> = <img src="images/propane_stick.png"> = <img src="images/simplePropaneStick.png"></p>
+                        <p>C<sub>6</sub>H<sub>14</sub> = <img src="images/hexane_stick.png" style="width:150px;"> = <img src="images/simpleHexaneStick.png"></p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table border="1" cellspacing="1" cellpadding="1" align="center">
+            <tbody>
+                <tr>
+                    <td style="text-align:center;">
+                        <p><u><b>mol</b></u></p>
+                        1 mol = 6.022*10^(23)
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table border="1" cellspacing="1" cellpadding="1" align="center">
+            <tbody>
+                <tr>
+                    <td style="text-align:center;">
+                        <p><u><b>m</b></u></p>
+                        <br>
+                        <br>
+                        <p>0.01 m</p>
+                        <img src="images/centimeter.png" style="width:1cm;">
+                        <br>
+                    </td>
+                    <td style="text-align:center;">
+                        <p><u><b>s</b></u></p>
+                        <p>1 s</p>
+                        <img src="images/second.gif">
+                    </td>
+                    <td style="text-align:center;">
+                        <p><u><b>kg</b></u></p>
+                        <br>
+                        <p>1 kg = 55.55 mol H<sub>2</sub>O </p>
+                        <img src="images/h2o_stick.png">
+                    </td>
+                    <td style="text-align:center;">
+                        <p><u><b>J</b></u></p>
+                        <br>
+                        <br>
+                        <p>1 J = 1 * ((kg * m^(2)) / s^(2))</p>
+                        <br>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table border="1" cellspacing="1" cellpadding="1" align="center">
+            <tbody>
+                <tr>
+                    <td style="text-align:center;">
+                        <p><u><b>m, s, c, J, kg</b></u></p>
+                        <p>H &#8212; H</p>
+                        <img src="images/hydrogenLine.png">
+                        <p><img src="images/hydrogenLine.png" style="width:50px;">= 0.21106 m</p>
+                        <p><img src="images/hydrogenLine.png" style="width:50px;">= 7.04*10^(-10) s</p>
+                        <p><img src="images/hydrogenLine.png" style="width:50px;">= c = 2.998*10^(8) m/s</p>
+                        <p><img src="images/hydrogenLine.png" style="width:50px;">= 9.459*10^(-7) J</p>
+                        <p><img src="images/hydrogenLine.png" style="width:50px;">= 1.0524*10^(-23) kg</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table border="1" cellspacing="1" cellpadding="1" align="center">
+            <tbody>
+                <tr>
+                    <td style="text-align:center;">
+                        <p><u><b>K</b></u></p>
+                        <img src="images/kelvin.png" style="width:490px;">
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table border="1" cellspacing="1" cellpadding="1" align="center">
+            <tbody>
+                <tr>
+                    <td style="text-align:center;">
+                        <p><u><b>&pi;</b></u></p>
+                        <img src="images/pi.png" style="width:200px;">
+                        <p>&pi; = C/D = 3.141592653589793...</p>
+                        <p>D = 2*r</p>
+                        <p>C = 2*&pi;*r</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p></p><br><br>
+        <table border="1" cellspacing="1" cellpadding="1" align="center">
+            <tbody>
+                <tr>
+                    <td style="text-align:center;">
+                        <u><img src="images/pizza.png" style="width:250px;"></u><br>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table border="1" cellspacing="1" cellpadding="1" align="center">
+            <tbody>
+                <tr>
+                    <td style="text-align:center;">
+                        <img src="images/tomato.png">
+                    </td>
+                    <td>
+                        <img src="images/dough.png">
+                    </td>
+                    <td>
+                        <img src="images/mozzarella.png">
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table border="1" cellspacing="1" cellpadding="1" align="center">
+            <tbody>
+                <tr>
+                    <td style="text-align:center;">
+                        <p><img src="images/tomato.png" style="width:150px;"><span class="bigText">&nbsp;= 100</span></p>
+                        <p>H<sub>2</sub>O = 94.7</p>
+                        <p>C<sub>x</sub>(H<sub>2</sub>O)<sub>y</sub> = 3.84</p>
+                        <p>N = 0.11</p>
+                        <p>K = 0.193</p>
+                        <p>P = 0.019</p>
+                        <p>C<sub>6</sub>H<sub>8</sub>O<sub>6</sub> = 0.0178</p>
+                        <p>Ca = 0.01</p>
+                        <p>Mg = 0.0081</p>
+                        <p>C<sub>40</sub>H<sub>56</sub> = 0.00286 =</p>
+                        <p><img src="images/simpleLycopene.png"></p>
+                        <p>C<sub>40</sub>H<sub>56</sub> = 0.000276 =</p>
+                        <p><img src="images/simpleBetaCarotene.png"></p>
+                        <p>C<sub>40</sub>H<sub>56</sub>O<sub>2</sub> = 0.000056</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table border="1" cellspacing="1" cellpadding="1" align="center">
+            <tbody>
+                <tr>
+                    <td style="text-align:center;">
+                        <p><img src="images/dough.png" style="width:150px;"></p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table border="1" cellpadding="1" cellspacing="1" align="center">
+        	<tbody>
+        		<tr>
+        			<td style="text-align:center"><img alt="" src="images/yeast.png" style="height:150px; width:150px" /></td>
+        			<td style="text-align:center"><img alt="" src="images/flour.png" style="height:150px; width:150px" /></td>
+        			<td style="text-align:center"><img alt="" src="images/water.png" style="height:150px; width:150px" /></td>
+        		</tr>
+        	</tbody>
+        </table>
+        <table border="1" cellpadding="1" cellspacing="1" align="center">
+        	<tbody>
+        		<tr>
+        			<td style="text-align:center"><img alt="" src="images/yeast.png" style="height:100px; width:100px" />&nbsp; &nbsp;=&nbsp; &nbsp;<img alt="" src="images/yeastStick.png" style="height:100px; width:100px" />&nbsp; =&nbsp; &nbsp;C<sub>19</sub>H<sub>14</sub>O<sub>2</sub></td>
+        		</tr>
+        	</tbody>
+        </table>
+        <table border="1" cellpadding="1" cellspacing="1" align="center">
+        	<tbody>
+        		<tr>
+        			<td style="text-align:center"><img alt="" src="images/flour.png" style="height:100px; width:100px" />&nbsp; &nbsp;=&nbsp; &nbsp;(C<sub>6</sub>H<sub>10</sub>O<sub>5</sub>)*x</td>
+        		</tr>
+        	</tbody>
+        </table>
+        <table border="1" cellpadding="1" cellspacing="1" align="center">
+        	<tbody>
+        		<tr>
+        			<td style="text-align:center"><img alt="" src="images/water.png" style="height:100px; width:100px" />&nbsp; &nbsp;=&nbsp; &nbsp;<img alt="" src="images/h2o_stick.png"/>&nbsp; =&nbsp; &nbsp;H<sub>2</sub>O</td>
+        		</tr>
+        	</tbody>
+        </table>
+        <table border="1" cellpadding="1" cellspacing="1" align="center">
+        	<tbody>
+        		<tr>
+        			<td style="text-align:center">
+        			    0.315 Kg <img alt="" src="images/water.png" style="height:50px; width:50px"/> + 0.45 Kg <img alt="" src="images/flour.png" style="height:50px; width:50px"/> + 0.007 Kg <img alt="" src="images/yeast.png" style="height:50px; width:50px"/> = Q
+        			</td>
+        		</tr>
+        		<tr>
+        			<td style="text-align:center">
+        			    Q + <img src="images/pi.png" style="width:75px;">(D=0.3m) + 3600s &#8594 <img src="images/dough.png" style="width:100px;">
+        			</td>
+        		</tr>
+        	</tbody>
+        </table>
+        <table border="1" cellspacing="1" cellpadding="1" align="center">
+            <tbody>
+                <tr>
+                    <td style="text-align:center;">
+                        <p><img src="images/mozzarella.png" style="width:150px;"><span class="bigText">&nbsp;= 100</span></p>
+                        <p>H<sub>2</sub>O = 87.5</p>
+                        <p>C<sub>12</sub>H<sub>22</sub>O<sub>11</sub> = 4.79</p>
+                        <p>r + CH(NH<sub>2</sub>)COOH = 3.53</p>
+                        <p>C<sub>81</sub>H<sub>125</sub>N<sub>22</sub>O<sub>39</sub>P = 2.79</p>
+                        <p>CH<sub>3</sub>(CH<sub>2</sub>)<sub>16</sub>COOH = <img src="images/stearicAcidStick.png" style="width:200px;"></p>
+                        <p>C<sub>18</sub>H<sub>34</sub>O<sub>2</sub> = <img src="images/oleicAcidStick.png" style="width:200px;"></p>
+                        <p>(CH<sub>3</sub>(CH<sub>2</sub>)<sub>16</sub>COOH)*x + (C<sub>18</sub>H<sub>34</sub>O<sub>2</sub>)*x = 1.5</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table border="1" cellpadding="1" cellspacing="1" align="center">
+        	<tbody>
+        		<tr>
+        		    <td style="text-align:center;">
+                        <img src="images/dough.png" style="width:150px;"> +
+                        <img src="images/tomato.png" style="width:150px;"> +
+                        <img src="images/mozzarella.png" style="width:150px;"></br>
+                        + (505.4K * 540s) = </br>
+                        <img src="images/pizza.png" style="width:200px;">
+                    </td>
+        		</tr>
+        	</tbody>
+        </table>
+        </div>
+    </body>
+</html>
